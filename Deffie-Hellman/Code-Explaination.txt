@@ -1,0 +1,32 @@
+This Python code simulates the Diffie-Hellman key exchange protocol and demonstrates how a Man-in-the-Middle (MitM) attack can compromise the security of this exchange. Here’s a detailed breakdown of the code:
+
+Code Breakdown
+Imports:
+
+The code imports the random module to generate random integers.
+Modular Exponentiation Function:
+
+power_mod(base, exponent, modulus): This function calculates ((\text{base}^{\text{exponent}}) \mod \text{modulus}) using Python's built-in pow() function, which efficiently computes modular exponentiation. This is a crucial operation in cryptography.
+Diffie-Hellman Key Exchange with MitM:
+
+diffie_hellman_mitm(p, g): This function simulates the Diffie-Hellman key exchange with an active MitM attack. Here’s how it works step-by-step:
+Step 1: Alice chooses a private key a, which is a random integer between 1 and (p-1). She calculates her public key (A = g^a \mod p).
+Step 2: Eve (the attacker) intercepts Alice's public key (A) and chooses her own private key e. She calculates her public key (E = g^e \mod p).
+Step 3: Eve sends her public key (E) to Bob instead of Alice's (A).
+Step 4: Bob chooses a private key b and calculates his public key (B = g^b \mod p). He sends this public key to Eve.
+Step 5: Eve intercepts Bob's public key (B) and sends her own public key (E) to Alice instead of (B).
+Step 6: Eve computes the shared secret with Alice using her public key (E) and Alice's private key a: ( \text{key_eve_alice} = E^a \mod p ).
+Step 7: Eve computes the shared secret with Bob using her public key (E) and Bob's private key b: ( \text{key_eve_bob} = E^b \mod p ).
+Step 8: The function prints the keys that Alice and Bob believe they have shared, but in reality, both are sharing their keys with Eve.
+Main Function:
+
+main(): This function serves as the entry point for the program.
+It prompts the user to input a prime number (p) and a base number (g).
+It then calls the diffie_hellman_mitm function to perform the key exchange simulation.
+Execution:
+
+The last part of the code checks if the script is being run directly and calls the main() function.
+Summary
+This code demonstrates the Diffie-Hellman key exchange protocol, which allows two parties to create a shared secret over an insecure channel.
+It highlights the vulnerability of the protocol to a Man-in-the-Middle attack, where an attacker (Eve) intercepts and alters the communication between Alice and Bob, leading them to believe they are sharing keys with each other when in fact they are both sharing keys with Eve.
+The code provides a clear illustration of how cryptographic protocols can be compromised if proper security measures (like authentication) are not in place.
