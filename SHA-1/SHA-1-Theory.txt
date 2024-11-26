@@ -1,0 +1,50 @@
+Theory:   
+  
+What is SHA-1?  
+SHA-1 (Secure Hash Algorithm 1) is a cryptographic hash function that takes an input (or  
+"message") and produces a fixed-size, 160-bit (20-byte) hash value known as a message digest. 
+SHA-1 is commonly represented as a 40-character hexadecimal number. It was developed by 
+the National Security Agency (NSA) and published by the National Institute of Standards and 
+Technology (NIST) in 1995 as part of the U.S. government’s Secure Hash Standard.  
+  
+Characteristics of SHA-1:  
+• Fixed Output Length: The algorithm always produces a 160-bit hash value, regardless 
+of the input size.  
+• One-Way Function: It is computationally infeasible to reverse-engineer the original 
+input from the output hash.  
+• Collision Resistance (formerly): Ideally, two different inputs should not produce the 
+same output hash, although this property is compromised for SHA-1 due to advances 
+in cryptanalysis.  
+  
+Applications of SHA-1:  
+• Data Integrity Verification: Ensuring data has not been altered during transmission.  
+• Digital Signatures: Used in some cryptographic algorithms for verifying the 
+authenticity of messages. • Checksum and Fingerprinting: Validating file contents.  
+  
+How SHA-1 Works:  
+  
+SHA-1 processes data by breaking it into chunks of 512-bit blocks and padding the last block 
+if necessary. The algorithm involves several rounds of bitwise operations, including rotations, 
+logical functions, and modular additions.  
+  
+Steps in SHA-1 Algorithm:  
+  
+1. Preprocessing:  
+o Padding: The message is padded so that its length is congruent to 448 modulo 
+512. Padding consists of a single '1' bit followed by '0' bits.  
+o Length Appending: The original message length (in bits) is appended to the 
+end of the padded message, making the total length a multiple of 512 bits.  
+2. Message Processing:  
+o Initialization: SHA-1 starts with five 32-bit initial hash values.  
+o Processing in Rounds: The message is processed in blocks of 512 bits, with 
+operations including bitwise logical functions, rotations, and modular additions. 
+o Compression Function: The intermediate hash values are updated in each 
+round through 80 iterations. 3. Output: The result is a 160-bit message digest, 
+represented in hexadecimal form.  
+  
+Security Considerations:  
+  
+Although SHA-1 was widely used for many years, it has been found to be vulnerable to 
+collision attacks, where two different inputs can produce the same hash. For this reason, it is 
+recommended to use more secure hashing algorithms such as SHA-256 or SHA-3 for modern 
+applications. 
