@@ -1,0 +1,79 @@
+Diffie-Hellman Key Exchange (DHKE)  
+  
+Overview: The Diffie-Hellman Key Exchange (DHKE) is a method used to securely exchange 
+cryptographic keys over a public channel. It was proposed by Whitfield Diffie and Martin 
+Hellman in 1976 and is foundational in establishing secure communication. Unlike symmetric 
+or asymmetric encryption schemes, DHKE is specifically for securely sharing a secret key 
+between two parties (e.g., Alice and Bob) without transmitting the key itself.  
+  
+How It Works:  
+  
+1. Public Parameters: Alice and Bob agree on a large prime number ppp and a generator ggg 
+(where g<pg < pg<p), both of which are public and can be used by any party.  
+2. Private Keys:  
+o Alice selects a private key aaa (a random integer) and computes A=gamod  pA 
+= g^a \mod pA=gamodp, which she sends to Bob.  
+o Bob selects a private key bbb and computes B=gbmod  pB = g^b \mod 
+pB=gbmodp, which he sends to Alice.  
+3. Shared Secret Key:  
+o Alice computes the shared key as K=Bamod  pK = B^a \mod pK=Bamodp. o 
+ Bob computes the shared key as K=Abmod  pK = A^b \mod pK=Abmodp. 
+o Both calculations yield the same result: K=gabmod  pK = g^{ab} \mod 
+pK=gabmodp, which becomes their shared secret.  
+This key exchange allows Alice and Bob to share a secret key without exposing it to potential 
+eavesdroppers.  
+Security Basis: The security of DHKE relies on the Discrete Logarithm Problem, which 
+states that given ggg, ppp, and gamod  pg^a \mod pgamodp, it is computationally infeasible to 
+determine aaa.  
+  
+Man-In-The-Middle (MITM) Attack  
+  
+Overview: A Man-in-the-Middle (MITM) attack is a type of cyberattack where an attacker 
+intercepts and potentially alters the communication between two parties without their 
+knowledge. In the context of the Diffie-Hellman Key Exchange, an MITM attack compromises 
+the security of the key exchange process.  
+  
+How a MITM Attack Works in DHKE:  
+  
+1. Interception:  
+o Assume Alice and Bob want to establish a shared secret key using DHKE.  
+o An attacker (Mallory) intercepts the public keys that Alice and Bob send to each 
+other.  
+2. Altered Key Exchange:  
+o Mallory sends her own public key M1=gm1mod  pM_1 = g^{m_1} \mod pM1 
+=gm1modp to Alice, pretending it is Bob’s key.  
+o Similarly, Mallory sends another key M2=gm2mod  pM_2 = g^{m_2} \mod 
+pM2=gm2modp to Bob, pretending it is Alice’s key.  
+3. Separate Keys:  
+o Alice computes KAM=M1amod  pK_{AM} = M_1^a \mod pKAM=M1amodp, 
+thinking it’s shared with Bob.  
+o Bob computes KBM=M2bmod  pK_{BM} = M_2^b \mod pKBM=M2bmodp, 
+thinking it’s shared with Alice.  
+o Mallory, knowing m1m_1m1 and m2m_2m2, can compute 
+KAMK_{AM}KAM and KBMK_{BM}KBM to decrypt or modify the 
+messages exchanged between Alice and Bob.  
+4. Compromised Communication:  
+o Alice and Bob believe they have established a shared secret, but Mallory can 
+read and potentially modify any communication between them.  
+  
+Implications: The MITM attack shows that while DHKE itself is mathematically sound, it 
+lacks inherent authentication. Without verifying that the public keys actually belong to the 
+intended parties, an attacker can easily compromise the exchange.  
+  
+Mitigation Strategies:  
+To prevent MITM attacks, protocols incorporating DHKE must include:  
+• Authentication Mechanisms: Such as digital signatures or certificates, to verify the 
+identities of the parties.  
+• Public Key Infrastructure (PKI): Ensures the integrity of the keys by using trusted  
+certificate authorities.  
+  
+Example Scenario of DHKE with MITM Attack:  
+1. Alice and Bob agree on public values ppp and ggg.  
+2. Alice sends A=gamod  pA = g^a \mod pA=gamodp to Bob, but Mallory intercepts it 
+and sends M1=gm1mod  pM_1 = g^{m_1} \mod pM1=gm1modp to Bob.  
+3. Bob sends B=gbmod  pB = g^b \mod pB=gbmodp to Alice, but Mallory intercepts it 
+and sends M2=gm2mod  pM_2 = g^{m_2} \mod pM2=gm2modp to Alice.  
+4. Alice calculates KAM=M1amod  pK_{AM} = M_1^a \mod pKAM=M1amodp, and  
+Bob calculates KBM=M2bmod  pK_{BM} = M_2^b \mod pKBM=M2bmodp.  
+5. Mallory computes both KAMK_{AM}KAM and KBMK_{BM}KBM and can decrypt 
+and modify messages as needed.
