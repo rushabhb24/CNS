@@ -1,0 +1,96 @@
+Theory:   
+  
+Data Encryption Standard (DES)  
+  
+Overview: The Data Encryption Standard (DES) is a symmetric key encryption algorithm that 
+was developed in the early 1970s by IBM and later adopted as a standard by the National 
+Institute of Standards and Technology (NIST) in 1977. Despite being succeeded by more secure 
+algorithms such as the Advanced Encryption Standard (AES), DES has been foundational in 
+the development of cryptographic practices.  
+  
+Structure and Operations: DES encrypts data in 64-bit blocks using a 56-bit key (the full key 
+length is 64 bits, but 8 bits are used for parity checking and are not part of the encryption). The 
+core structure of DES is the Feistel cipher, which divides the 64-bit block into two 32-bit halves 
+called L (left) and R (right).  
+  
+Key Processes:  
+  
+Initial Permutation (IP): The plaintext block undergoes an initial permutation that rearranges 
+the bits according to a predefined table. This permutation is purely a reordering and does not 
+involve any cryptographic operation.  
+Feistel Rounds: DES operates over 16 rounds, where each round consists of the following: 
+Expansion (E-box): The 32-bit R half is expanded to 48 bits using an expansion 
+permutation, which duplicates certain bits.  
+Subkey XOR: The expanded R is XORed with a 48-bit subkey derived from the main 56-bit 
+key.  
+Substitution (S-box): The 48-bit result is divided into eight 6-bit segments, each passed 
+through an S-box. Each S-box outputs 4 bits, resulting in a 32-bit output after substitution. 
+Permutation (P-box): The 32-bit output from the S-box stage is permuted to produce the final 
+output of the round.  
+Round Combination: The result is XORed with the L half, and L and R are swapped for the 
+next round.  
+Final Permutation (FP): After 16 rounds, the L and R halves are combined and a final 
+permutation is applied, reversing the initial permutation to produce the final ciphertext. Key 
+Schedule: The key used in each round (subkey) is derived from the original 56-bit key. DES 
+uses a key scheduling algorithm that permutates and shifts the original key to produce 16 
+subkeys, one for each round.  
+  
+Strengths and Weaknesses:  
+  
+Strengths: DES's complex structure of permutations, substitutions, and XOR operations makes 
+it difficult to analyze without knowledge of the key.  
+Weaknesses: The primary weakness of DES lies in its 56-bit key length, making it vulnerable 
+to brute-force attacks. Modern computing power can exhaust all possible keys within a feasible 
+timeframe.  
+  
+Applications: Historically, DES was used in various applications requiring secure data 
+encryption, such as financial transactions, government communications, and secure storage. Its 
+use has diminished due to advances in computing that allow for effective brute-force attacks.  
+Rivest–Shamir–Adleman (RSA)  
+Overview: RSA is an asymmetric cryptographic algorithm named after its inventors, Ron 
+Rivest, Adi Shamir, and Leonard Adleman, who introduced it in 1977. Unlike symmetric key 
+algorithms such as DES, RSA uses a pair of keys: a public key for encryption and a private 
+key for decryption. This property allows for secure data transmission over untrusted 
+channels, as only the intended recipient can decrypt the message using their private key.  
+Mathematical Foundation: RSA's security is based on the difficulty of factoring large 
+composite numbers. The algorithm relies on the following mathematical principles:  
+1. Prime Numbers: Two large prime numbers p and q are chosen, and their product n = 
+p * q is computed. The value n is used as the modulus for encryption and decryption.  
+2. Totient Function: Compute φ(n) = (p-1) * (q-1), where φ(n) represents the 
+number of integers less than n that are coprime to n.  
+3. Encryption Exponent (e): Choose an integer e such that 1 < e < φ(n) and gcd(e, 
+φ(n)) = 1. Common values of e are 3, 17, or 65537, as they provide a good balance 
+between security and performance.  
+4. Decryption Exponent (d): Compute d such that e * d ≡ 1 (mod φ(n)). The private 
+key exponent d allows for the decryption of messages.  
+Key Generation:  
+• Public Key: The public key consists of the pair (e, n) and is shared with others for 
+encryption.  
+• Private Key: The private key consists of the pair (d, n) and is kept secret by the 
+recipient for decryption.  
+ 
+ 
+Encryption and Decryption:  
+• Encryption: A sender encrypts the message M (converted into an integer) using the 
+public key with the formula C = M^e mod n, where C is the ciphertext.  
+• Decryption: The recipient decrypts the ciphertext C using the private key with the 
+formula M = C^d mod n, retrieving the original message.  
+Security Considerations:  
+• Strengths: RSA is secure when p and q are large (e.g., 2048-bit keys), making it 
+computationally infeasible to factor n into p and q. It is widely used for digital 
+signatures, secure key exchange, and data encryption.  
+• Weaknesses: RSA can be slow compared to symmetric key algorithms, especially when 
+dealing with large data. It is susceptible to certain attacks (e.g., timing attacks, chosen 
+ciphertext attacks) if not implemented carefully.  
+Applications: RSA is commonly used in:  
+• Digital Signatures: Ensuring the authenticity and integrity of a message.  
+• Public Key Infrastructure (PKI): Securely managing digital certificates.  
+• SSL/TLS Protocols: Establishing secure connections on the internet.  
+Comparison of DES and RSA:  
+• Key Type: DES uses a symmetric key, while RSA uses asymmetric keys.  
+• Speed: DES is generally faster due to its simpler mathematical operations. RSA, with 
+its complex calculations, is slower but more secure for key exchange.  
+• Use Cases: DES is more suitable for encrypting bulk data (now replaced by AES), 
+while RSA is better for secure key exchange and authentication.  
+This comprehensive theory provides a deep understanding of how DES and RSA algorithms 
+function, their structures, strengths, and applications in modern cryptography. 
