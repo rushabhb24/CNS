@@ -1,0 +1,69 @@
+Theory:   
+  
+1. Introduction to Symmetric Encryption:  
+Symmetric encryption is a cryptographic method where the same key is used for both encryption and 
+decryption. One of the most common structures for symmetric encryption algorithms is the Feistel 
+structure. This structure is the foundation of many block ciphers, such as the Data Encryption 
+Standard (DES).  
+  
+2. Feistel Structure Overview:  
+The Feistel structure is a design model used to construct symmetric encryption algorithms. It divides 
+the input data into two halves and applies several rounds of processing to achieve encryption. Each 
+round performs operations such as XOR and substitution to ensure the security of the encryption.  
+The Feistel structure works as follows:  
+• Input Block: The plaintext is divided into two halves: Left and Right.  
+• Rounds: The data is passed through multiple rounds, where each round uses a round function 
+and a subkey derived from the main key.  
+• Final Output: After a certain number of rounds, the two halves are recombined to form  
+the ciphertext.  
+  
+3. Steps in Feistel Structure:  
+In a single round of a Feistel cipher, the following operations occur:  
+1. Split: The input block is split into two equal halves: Left (L) and Right (R).  
+o  L0 = Left half of the block. o 
+ R0 = Right half of the block.  
+2. Round Function (F): A round function F is applied to one half of the data (usually the right 
+half) along with a subkey K_i for that round. The round function is the core of the cipher and 
+typically includes operations such as substitution, permutation, and XOR.  
+3. XOR: The result of the round function F is XORed with the other half (the left half) of the 
+data. 
+ o  L1 = R0.  
+• R1 = L0  F(R0, K1).  
+• Swap: After XORing, the two halves are swapped, and this process is repeated for a 
+number of rounds. The final output after the rounds is the encrypted data.  
+  
+ 
+ 
+4. Decryption in Feistel Structure:  
+One of the major advantages of the Feistel structure is that the decryption process is very similar to 
+encryption. The same key and round functions are used, but the subkeys are applied in reverse order. 
+The structure ensures that decrypting the ciphertext returns the original plaintext. 
+  
+5. Key Schedule:  
+The Feistel cipher uses a series of subkeys derived from the main encryption key. These subkeys are 
+generated for each round of the encryption process. The key schedule typically involves splitting, 
+shifting, and permutation of the main key to produce subkeys for each round.  
+  
+6. Advantages of Feistel Structure:  
+• Security: The Feistel structure provides strong encryption due to its complex combination of 
+XOR operations and round functions.  
+• Efficiency: The decryption process is identical to encryption, making the algorithm efficient 
+and easy to implement.  
+• Flexibility: The structure can be used with any symmetric encryption algorithm as long as 
+the round function is secure.  
+  
+7. Applications:  
+The Feistel structure is used in several popular encryption algorithms, including:  
+• DES (Data Encryption Standard): DES is one of the earliest examples of a Feistel cipher, 
+operating with a 56-bit key and 16 rounds.  
+• Blowfish: Blowfish is another symmetric block cipher that uses a Feistel network with 
+variable-length keys and 16 rounds.  
+  
+Symmetric Encryption Algorithm Based on Feistel Structure:  
+For this practical, we will design a basic symmetric encryption algorithm using the Feistel structure. 
+Here’s a summary of how it works:  
+• Plaintext Input: A block of plaintext, divided into two halves.  
+• Round Function: A simple function involving XOR and substitution (for demonstration 
+purposes).  
+• Subkeys: Derived from the main key for each round. 
+• Rounds: The input goes through several rounds of encryption, resulting in ciphertext. 
