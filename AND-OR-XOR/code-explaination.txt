@@ -1,0 +1,30 @@
+This Python code snippet performs two bitwise operations (AND and XOR) on each character of the string "Hello World" with the integer 127. Let's break down the code step by step:
+
+Initialization:
+
+The string string is initialized with the value "Hello World".
+AND Operation:
+
+The code prints a header indicating that the results of the AND operation will follow.
+It then iterates over each character in the string using a for loop.
+For each character, it performs a bitwise AND operation with the integer 127 using the expression ord(char) & 127. The ord() function converts the character to its corresponding ASCII value.
+The result of the AND operation is stored in the variable and_result.
+It then prints the character and its corresponding AND result in the format char -> and_result.
+XOR Operation:
+
+After completing the AND operation, the code prints a header indicating that the results of the XOR operation will follow.
+Similar to the AND operation, it iterates over each character in the string.
+For each character, it performs a bitwise XOR operation with the integer 127 using the expression ord(char) ^ 127.
+The result of the XOR operation is stored in the variable xor_result.
+It then prints the character and its corresponding XOR result in the format char -> xor_result.
+Summary of Bitwise Operations:
+AND Operation (&): This operation compares each bit of the operands. If both bits are 1, the result is 1; otherwise, it is 0. ANDing with 127 effectively keeps the lower 7 bits of the ASCII value intact (since 127 in binary is 01111111).
+
+XOR Operation (^): This operation compares each bit of the operands. If the bits are different, the result is 1; if they are the same, the result is 0. XORing with 127 flips the bits of the lower 7 bits of the ASCII value (again, since 127 in binary is 01111111).
+
+Example Output:
+For each character in "Hello World", the program will display the result of the AND and XOR operations, showing how each character's ASCII value is transformed by these operations. For example, the character 'H' (ASCII 72) would yield:
+
+AND with 127: 72 & 127 = 72
+XOR with 127: 72 ^ 127 = 55
+This code provides a clear illustration of how bitwise operations can manipulate ASCII values of characters in a string.
