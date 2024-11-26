@@ -1,0 +1,45 @@
+This Python code implements a simplified version of the RSA (Rivest-Shamir-Adleman) cryptographic algorithm, which is widely used for secure data transmission. The code includes functions for generating RSA keys, encrypting messages, and decrypting them. Here’s a detailed breakdown of the code:
+
+Code Breakdown
+Imports:
+
+The code does not use any external libraries, relying solely on Python's built-in functionalities.
+Greatest Common Divisor (GCD):
+
+gcd(a, b): This function computes the greatest common divisor of two integers a and b using the Euclidean algorithm. It repeatedly replaces a with b and b with a % b until b becomes zero. The last non-zero value of a is the GCD.
+Modular Inverse:
+
+mod_inverse(a, m): This function computes the modular inverse of a under modulo m. The modular inverse is a number x such that (a * x) % m = 1. The function uses the Extended Euclidean Algorithm to find this inverse. If the result is negative, it adjusts it to be positive by adding m0.
+Prime Check:
+
+is_prime(n): This function checks if a number n is prime. It returns False for numbers less than or equal to 1. For numbers greater than 1, it checks divisibility from 2 up to the square root of n. If n is divisible by any of these numbers, it returns False; otherwise, it returns True.
+RSA Key Generation:
+
+rsa_generate_keys(p, q): This function generates the public and private keys for RSA encryption.
+It first checks if the input numbers p and q are prime using the is_prime function.
+It calculates n = p * q, which is used in both the public and private keys.
+It calculates Euler's Totient Function φ(n) = (p - 1) * (q - 1).
+The function then selects a public exponent e such that (1 < e < φ(n)) and gcd(e, φ(n)) = 1. This ensures that e is coprime with φ(n).
+It computes the private exponent d using the mod_inverse function, ensuring that ((e * d) % φ(n) = 1).
+Finally, it returns the public key (e, n) and the private key (d, n).
+Encryption:
+
+encrypt(message, public_key): This function encrypts a numeric message using the RSA public key.
+It extracts e and n from the public key and uses the formula: cipher = (message ** e) % n to encrypt the message.
+It returns the encrypted message.
+Decryption:
+
+decrypt(encrypted_message, private_key): This function decrypts the encrypted message using the RSA private key.
+It extracts d and n from the private key and uses the formula: decrypted = (cipher ** d) % n to decrypt the message.
+It returns the decrypted message.
+Main Function:
+
+main(): This function serves as the entry point for the program.
+It prompts the user to input two prime numbers p and q, and a numeric message to encrypt.
+It generates the public and private keys by calling rsa_generate_keys(p, q).
+It encrypts the message using the encrypt function and decrypts it using the decrypt function.
+Finally, it prints the public key, private key, original message, encrypted message, and decrypted message.
+Summary
+The code provides a basic implementation of the RSA algorithm, demonstrating key generation, encryption, and decryption.
+It emphasizes the importance of prime numbers in RSA and shows how to perform modular arithmetic to secure messages.
+The program is a good educational tool for understanding the principles of RSA encryption and how public-key cryptography works.
