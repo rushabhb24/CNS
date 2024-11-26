@@ -1,0 +1,110 @@
+**Theory**   
+  
+Introduction: 
+The uses of computer are increased 
+day by day. A computer people can share information from one computer to another computer 
+with the help of device or media. In the current days there are various ways or method for 
+sharing information because people can carry several gigabytes or terabyte of data from one 
+destination to another destination. We also know history and which devices are used to 
+exchange information in the world. There are several ways a user can go about copying data 
+from one computer to another computer. In the process of exchanging the information using 
+communication media there will be a problem of attack of malware or computer virus. A 
+computer virus is a computer program that can spread across computers and networks by 
+making copies of itself, usually without the user's knowledge. Viruses are capable of displaying 
+different messages, denying all kinds of access, data thefts, changes in valuable data or files, 
+deleting systems or any files, or it disable hardware. 
+
+** Working of Anti-virus **:
+Antivirus software works by comparing your computer applications and files to a database of 
+known malware kinds. Because hackers are continually creating and disseminating new 
+viruses, it will also check systems for the presence of new or undiscovered malware threats. 
+The antivirus checks files, programs. and applications going in apd out of your computer to its 
+database to identify matches. Similar and identical matches to the database are segregated, 
+scanned. and eliminated.   
+Most programs will employ three types of detection devices:   
+• Specific detection. which looks for known parts or types of malware or patterns that are       
+linked by a common codebase   
+• Generic detection is a type of detection that looks for known parts or types of malware or 
+patterns that are related to a common codebase.   
+• Heuristic detection is a type of virus detection that looks for unknown infections by    
+spotting suspicious file structures.  
+
+** Need of Anti-virus **:   
+• Antivirus plays an important role in any device. Following are a few of the top protection 
+provided by it.   
+• Antivirus detects malware and viruses that prominently penetrate company systems.
+This 
+will help in maintaining the hygiene of the computer.   
+• The growth of hackers is immense these days. Hackers tend to target sensitive and 
+confidential data from your system. In the presence of antivirus. the activity of data access and 
+more can be detected. Moreover, the data will be protected to a great extent by the antivirus 
+software.   
+• If you regularly plug in external devices to your PC, the antivirus software will protect your 
+PC/laptop from any potential virus from any external device.   
+• Through the above-mentioned methods, your PC/ laptop will be protected against viruses 
+to a great extent. As a result, your computer will have a long life.   
+  
+Virus Protection:   
+The main role of an antivirus program is to face viruses and other sorts of malware. The viruses 
+won’t only cause damages to your data, it can degrade the general system performance. All of 
+them can happen without your knowledge. The antivirus programming introduced on your PC 
+distinguishes and eliminates this malware before they create any damages to your PC.   
+  
+Spyware Protection:   
+Spyware because the name suggests may be quite a malware that spies on your computer 
+stealing all the confidential information. These details also inelude MasterCard details. 
+passwords. and other financial data. This ultimately results in fraud. The antivirus software has 
+the potential to stop these sorts of spyware attacks.   
+  
+Web Protection:   
+While surfing the web, users can encounter various other sorts of threats. In untrustworthy sites. 
+cyber attackers can gather your MasterCard and checking account details. One among the 
+thanks for overcoming this is often by using antivirus software. Using an antivirus program, 
+you'll protect your valuable pieces of information while surfing online.   
+Spam Protection:   
+Viruses also can enter your computer through means of spam emails and ads. These emails and 
+ads can show up repeatedly albeit you haven't any interest in it. Once the virus finds thanks to 
+sneak into your PC it causes irreversible damages. An Antivirus works by the way of blocking 
+these spam emails and ads.   
+  
+Firewall Feature:   
+The firewall provides two-way protection. This suggests that regardless of the information 
+that's sent or received is going to be double-checked here. Hence, hackers cannot enter the 
+system data.   
+  
+Cost-Effective:   
+Even though there are many premium versions of antivirus programs for a monthly/yearly 
+subscription fee, there are some antivirus programs that are completely free from charge. These 
+sorts of antivirus programs offer almost an equivalent level of protection provided by the 
+subscription-based. Albeit you select to afford a premium version, they're relatively 
+inexpensive.   
+
+** Drawbacks of Antivirus **:   
+  
+System Slowdown:   
+Using an antivirus program means tons of resources from the memory and therefore the disk 
+drive is getting used. As a result, it can drastically slow down the overall speed of the pc. 
+Moreover, the method of scanning also can cause lags within the network.   
+No Complete Protection:   
+If you're employing a free antivirus program, there's no guarantee that it'll provide you the 
+entire protection. Moreover, they're capable of identifying only certain sorts of threats. So as 
+for acquiring a complete level of protection, you've got to use a firewall also.  
+Security Holes:   
+When security holes are present inside the OS or the networking software, it'll provide an 
+opportunity for the virus to bypass the antivirus software. Unless the user takes action to stay 
+updated. the antivirus software won't be effective.   
+  
+Limited Detection Techniques:   
+For identifying a possible threat. there is always quite one method available. However. within 
+the case of antivirus programs, it mostly executes the tactic of virus scanning. Sometimes the 
+antivirus programs can offer you false alarms if the scanning matches with the traditional file.   
+  
+Frequent Advertisements:   
+Apart from premium versions of antivirus programs, through some means, the free antivirus 
+software must generate an income. Advertising is one of the ways to realize them. Many 
+sometimes these advertisements degrade the user experience.    
+  
+No Customer Support:   
+Unless you buy the premium version, there won't be any customer support given to you. Within 
+the event of any problem, the sole thanks to overcoming are through forums and knowledge 
+bases.  
