@@ -1,0 +1,45 @@
+Theory:   
+  
+1. Bitwise Operations:  
+Bitwise operations work directly on the binary representation of data (characters, numbers). For 
+this practical, we perform these operations on the ASCII value of each character in the string.  
+Bitwise AND (&):  
+• The AND operation compares the corresponding bits of two operands.  
+• If both bits are 1, the result is 1; otherwise, it is 0.  
+• Example: o Binary of 127 (01111111 in 8-bit format). o A character like H (ASCII 72 = 
+01001000 in binary).  
+o The AND result of H & 127: 01001000 (which remains 72, same as the original 
+character because H is already less than 127 in value).  
+Bitwise OR (|):  
+• The OR operation compares the bits of two operands.  
+• If either of the bits is 1, the result is 1; otherwise, it is 0.  
+• Example:  
+o For the character H (01001000 in binary) and 127 (01111111), the OR result is 
+01111111, which corresponds to the ASCII value 127.  
+Bitwise XOR (^):  
+• The XOR operation compares the bits of two operands.  
+• It returns 1 if the corresponding bits of the operands are different, and 0 if they are the 
+same.  
+• Example:  
+o The XOR result between H (01001000) and 127 (01111111) gives 00110111 
+(binary for 55).  
+2. ASCII Representation:  
+Each character in the string "Hello World" has an associated ASCII code (e.g., H = 72, e = 
+101). When we apply bitwise operations, these operations are performed on the ASCII values 
+of the characters. The result is either:  
+• A new ASCII value that corresponds to another character, or  
+• The same ASCII value if the operation doesn’t change the binary representation 
+significantly (like in some cases with AND).  
+3. Practical Application:  
+In this practical, the operations serve to demonstrate how bitwise operations can alter the binary 
+representation of characters:  
+• AND operation with 127 limits the values of characters to be below 127.  
+• OR operation ensures that the result includes some bits set to 1, potentially converting 
+the character to a higher ASCII value.  
+• XOR operation highlights how two binary values can combine to produce different 
+output when bits differ.  
+4. Objective:  
+The objective of this practical is to understand how manipulating data at the binary level using 
+bitwise operators affects the underlying data, which is particularly useful in cryptography, 
+encoding schemes, and low-level data processing.  
+4o 
