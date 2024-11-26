@@ -1,0 +1,23 @@
+This Python code snippet demonstrates how to calculate the SHA-1 message digest of a given text using the hashlib library. Below is a detailed breakdown of the code:
+
+Code Breakdown
+Imports:
+
+The code imports the hashlib module, which provides a common interface for secure hash functions like SHA-1, SHA-256, MD5, etc.
+SHA-1 Digest Calculation Function:
+
+calculate_sha1_digest(text): This function computes the SHA-1 hash of the input text.
+Parameters:
+text: A string input for which the SHA-1 hash will be calculated.
+Function Steps:
+A SHA-1 hash object is created using hashlib.sha1().
+The update method of the hash object is called with the text encoded in UTF-8 format. This converts the string into bytes, which is required for hashing.
+Finally, the function returns the hexadecimal representation of the hash using hexdigest(), which provides the digest as a string of hexadecimal digits.
+Example Usage:
+
+The code includes a main block that allows the user to input text interactively.
+The user is prompted to enter the text they want to hash.
+The calculate_sha1_digest function is called with the user input, and the resulting SHA-1 digest is printed to the console.
+Summary
+This code provides a straightforward implementation for calculating the SHA-1 hash of a string input.
+SHA-1 (Secure Hash Algorithm 1) produces a 160-bit (20-byte) hash value, typically rendered as a hexadecimal number, which is commonly used for data integrity verification and digital signatures.
